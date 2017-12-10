@@ -23,9 +23,9 @@ class App extends Component {
       <div className="App">
         <Navbar bsClass="App-header">
           <div className="flex">
-            <a onClick={() => this.setLocation("/")}>Home</a>
-            <a onClick={() => this.setLocation("/About")}>About</a>
-            <a onClick={() => this.setLocation("/Contact")}>Contact</a>
+            <div onClick={() => this.setLocation("/")}>Home</div>
+            <div onClick={() => this.setLocation("/About")}>About</div>
+            <div onClick={() => this.setLocation("/Contact")}>Contact</div>
           </div>
         </Navbar>
 
