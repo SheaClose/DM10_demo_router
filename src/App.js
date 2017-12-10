@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-
 import { Navbar } from "react-bootstrap";
+
 import "./App.css";
+
 import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
@@ -15,8 +16,8 @@ class App extends Component {
     this.setLocation = this.setLocation.bind(this);
   }
   setLocation(location) {
-    window.location.hash = location;
-    this.setState({ location: location });
+    // window.location.hash = location;
+    // this.setState({ location: location });
   }
   render() {
     return (
