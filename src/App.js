@@ -16,6 +16,9 @@ class App extends Component {
     this.setLocation = this.setLocation.bind(this);
   }
   setLocation(location) {
+    // onClick={() => this.setLocation("/")}
+    // onClick={() => this.setLocation("/About")}
+    // onClick={() => this.setLocation("/Contact")}
     // window.location.hash = location;
     // this.setState({ location: location });
   }
@@ -24,9 +27,9 @@ class App extends Component {
       <div className="App">
         <Navbar bsClass="App-header">
           <div className="flex">
-            <div onClick={() => this.setLocation("/")}>Home</div>
-            <div onClick={() => this.setLocation("/About")}>About</div>
-            <div onClick={() => this.setLocation("/Contact")}>Contact</div>
+            <a href="/#/">Home</a>
+            <a href="/#/About">About</a>
+            <a href="/#/Contact">Contact</a>
           </div>
         </Navbar>
 
