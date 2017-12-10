@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+
+import { Navbar } from "react-bootstrap";
 import "./App.css";
 import Home from "./Home";
 import About from "./About";
@@ -19,13 +21,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        <Navbar bsClass="App-header">
           <div className="flex">
             <a onClick={() => this.setLocation("/")}>Home</a>
             <a onClick={() => this.setLocation("/About")}>About</a>
             <a onClick={() => this.setLocation("/Contact")}>Contact</a>
           </div>
-        </header>
+        </Navbar>
+
         <Home />
         <About />
         <Contact />
