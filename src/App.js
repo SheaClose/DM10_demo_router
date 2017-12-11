@@ -1,11 +1,8 @@
 import React, { Component } from "react";
 import { Navbar } from "react-bootstrap";
-
+import { NavLink } from "react-router-dom";
+import routes from "./routes";
 import "./App.css";
-
-import Home from "./Home";
-import About from "./About";
-import Contact from "./Contact";
 
 class App extends Component {
   constructor(props) {
@@ -13,29 +10,31 @@ class App extends Component {
     this.state = {
       location: window.location.hash
     };
-    this.setLocation = this.setLocation.bind(this);
   }
-  setLocation(location) {
-    // onClick={() => this.setLocation("/")}
-    // onClick={() => this.setLocation("/About")}
-    // onClick={() => this.setLocation("/Contact")}
-    // window.location.hash = location;
-    // this.setState({ location: location });
-  }
+
   render() {
     return (
       <div className="App">
         <Navbar bsClass="App-header">
           <div className="flex">
-            <a href="/#/">Home</a>
-            <a href="/#/About">About</a>
-            <a href="/#/Contact">Contact</a>
+            <NavLink activeClassName="active" exact to="/">
+              Home
+            </NavLink>
+            <NavLink activeClassName="active" to="/About">
+              About
+            </NavLink>
+            <NavLink activeClassName="active" to="/Contact">
+              Contact
+            </NavLink>
+            <NavLink
+              activeClassName="active"
+              to={`/random/${Math.floor(Math.random() * 50)}`}
+            >
+              Random
+            </NavLink>
           </div>
         </Navbar>
-
-        <Home />
-        <About />
-        <Contact />
+        {routes}
       </div>
     );
   }
