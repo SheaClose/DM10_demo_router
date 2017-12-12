@@ -2,10 +2,6 @@
   text-align: center;
 }
 
-.active {
-  background-color: red;
-}
-
 .App-header {
   background-color: #222;
   padding: 20px;
@@ -36,4 +32,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+a.active {
+  color: grey;
 }
