@@ -11,10 +11,7 @@ export default (
     <Route path="/Contact" component={Contact} />
     <Route
       path="/Random/:num"
-      render={props => {
-        console.log(props);
-        return <div className="">Random: {props.match.params.name}</div>;
-      }}
+      render={props => <div className="">Random: {props.match.params.num}</div>}
     />
   </Switch>
 );
