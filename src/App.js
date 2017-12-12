@@ -16,26 +16,30 @@ class App extends Component {
     this.setLocation = this.setLocation.bind(this);
   }
   setLocation(location) {
-    // onClick={() => this.setLocation("/")}
-    // onClick={() => this.setLocation("/About")}
-    // onClick={() => this.setLocation("/Contact")}
-    // window.location.hash = location;
-    // this.setState({ location: location });
+    window.location.hash = location;
+    this.setState({ location: location });
+  }
+  renderComp() {
+    switch (window.location.hash) {
+      case "#/About":
+        return <About />;
+      case "#/Contact":
+        return <Contact />;
+      default:
+        return <Home />;
+    }
   }
   render() {
     return (
       <div className="App">
         <Navbar bsClass="App-header">
           <div className="flex">
-            <a href="/#/">Home</a>
-            <a href="/#/About">About</a>
-            <a href="/#/Contact">Contact</a>
+            <a onClick={() => this.setLocation("/")}>Home</a>
+            <a onClick={() => this.setLocation("/About")}>About</a>
+            <a onClick={() => this.setLocation("/Contact")}>Contact</a>
           </div>
         </Navbar>
-
-        <Home />
-        <About />
-        <Contact />
+        {this.renderComp()}
       </div>
     );
   }
